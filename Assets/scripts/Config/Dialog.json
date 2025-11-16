@@ -1,0 +1,50 @@
+{"dialogueList": [
+	{
+		"id": "test001",
+		"title": "Fulano",
+		"text": "Olá, tudo bem?",
+		"reply": [
+			{
+				"text": "Sim, estou indo...",
+				"nextDialog": "test002"
+			},
+			{
+				"text": "ehh... a UFRN não me deixa ser feliz",
+				"nextDialog": "test003"
+			}
+		]
+	},
+	{
+		"id": "test002",
+		"title": "Fulano",
+		"text": "que bom! Espero que esteja bem mesmo",
+		"nextDialog": "test004"
+	},
+	{
+		"id": "test003",
+		"title": "Fulano",
+		"text": "O semestre está quase acabando! Força que você consegue",
+		"nextDialog": "test004"
+	},
+	{
+		"id": "test004",
+		"title": "Fulano",
+		"text": "Deu minha hora! Já estou indo."
+	},
+	{
+		"id": "test005",
+		"title": "Mesa com artefatos históricos",
+		"text": "Durante as escavações no Forte foram encontrados materiais arqueológicos, como: potes de cerâmica, utensílios de louça, porcelana, vidro, balas de canhão, moedas, adornos, cachimbos, entre outros."
+	},
+	{
+		"id": "test006",
+		"title": "Mesa com artefatos históricos",
+		"text": "Testando diálogo, Aperte [E]",
+		"nextDialog": "test007"
+	},
+	{
+		"id": "test007",
+		"title": "Mesa com artefatos históricos",
+		"text": "Deu certo! Aperte [E] de novo!."
+	}
+]}
