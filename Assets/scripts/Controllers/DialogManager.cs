@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 [Serializable]
 public class Dialogue
@@ -13,6 +13,7 @@ public class Dialogue
     public string text;
     public List<Reply> reply;
     public string nextDialog;
+    public string action;
 }
 
 [Serializable]
@@ -20,6 +21,8 @@ public class Reply
 {
     public string text;
     public string nextDialog;
+    public string action;
+    public bool breakDialog = false;
 }
 
 [Serializable]
@@ -31,11 +34,33 @@ public class Dialogues
 
 }
 
+[Serializable]
+public class DialogAction
+{
+    public string id;
+    public UnityEvent action;
+}
+
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager Instance;
     [SerializeField] private TextAsset dialogText;
     public List<Dialogue> dialogueList;
+    public List<DialogAction> actionList;
+
+    public void testEvent(string str)
+    {
+        Debug.Log(str);
+    }
+
+    public void invokeEvent(string str)
+    {
+        DialogAction dialogEvent = actionList.FirstOrDefault<DialogAction>(action => action.id.Equals(str));
+        if(dialogEvent != null)
+        {
+            dialogEvent.action.Invoke();
+        }
+    }
 
     void Awake()
     {

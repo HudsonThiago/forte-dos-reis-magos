@@ -11,6 +11,10 @@
 			{
 				"text": "ehh... a UFRN não me deixa ser feliz",
 				"nextDialog": "test003"
+			},
+			{
+				"text": "Apenas um teste",
+				"nextDialog": "test008"
 			}
 		]
 	},
@@ -23,7 +27,7 @@
 	{
 		"id": "test003",
 		"title": "Fulano",
-		"text": "O semestre está quase acabando! Força que você consegue",
+		"text": "O semestre está quase acabando! Força que você consegue!!",
 		"nextDialog": "test004"
 	},
 	{
@@ -46,5 +50,55 @@
 		"id": "test007",
 		"title": "Mesa com artefatos históricos",
 		"text": "Deu certo! Aperte [E] de novo!."
+	},
+	{
+		"id": "test008",
+		"title": "Fulano",
+		"text": "Isso é apenas um teste, a primeira opção fecha o diálogo. A segunda opção vai para outro diálogo",
+		"reply": [
+			{
+				"text": "Teste 1"
+			},
+			{
+				"text": "Teste 2",
+				"nextDialog": "test003"
+			}
+		]
+	},
+	{
+		"id": "test009",
+		"title": "Teste",
+		"text": "Testando a primeira função. aperte [E] para chamar a função",
+		"nextDialog": "test010",
+		"action": "test1"
+	},
+	{
+		"id": "test010",
+		"title": "Teste",
+		"text": "Outro teste de função",
+		"reply": [
+			{
+				"text": "Ir para o jogo da escavação",
+				"action": "test2",
+				"breakDialog": true
+			},
+			{
+				"text": "Teste 3",
+				"nextDialog": "test011",
+				"action": "test3"
+			}
+		]
+	},
+	{
+		"id": "test011",
+		"title": "Teste",
+		"text": "último teste!!",
+		"reply": [
+			{
+				"text": "Função 4",
+				"action": "test4"
+			}
+		],
+		"action": "test5"
 	}
 ]}

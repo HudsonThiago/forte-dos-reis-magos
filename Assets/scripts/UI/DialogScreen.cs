@@ -1,5 +1,6 @@
 using Game.Entities;
 using NUnit.Framework;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,7 +58,24 @@ public class DialogScreen : MainScreen, INavigation, IInteraction
 
     public void navigation(Vector2 value)
     {
-        Debug.Log(value);
+        if (value.y > 0 && field > 0)
+        {
+            prevField = field;
+            field--;
+        }
+        if (value.y < 0 && field < totalFields - 1)
+        {
+            prevField = field;
+            field++;
+        }
+        if (dialogOptionList[prevField].TryGetComponent(out AnimationSystem prevAnimationSystem))
+        {
+            prevAnimationSystem.changeAnimation("active");
+        }
+        if (dialogOptionList[field].TryGetComponent(out AnimationSystem currentAnimationSystem))
+        {
+            currentAnimationSystem.changeAnimation("selected");
+        }
     }
 
     public int scroller(float field)
@@ -69,18 +87,46 @@ public class DialogScreen : MainScreen, INavigation, IInteraction
     {
         if (canInteract)
         {
-            if (currentDialog.reply == null || currentDialog.reply.Count == 0)
+            DialogManager.Instance.invokeEvent(currentDialog.action);
+
+            if (hasNoReply(currentDialog.reply))
             {
                 if (string.IsNullOrEmpty(currentDialog.nextDialog))
                 {
                     UIManager.Instance.toPrevScreen();
-                } else
+                }
+                else
                 {
                     currentDialog = DialogManager.Instance.findDialog(currentDialog.nextDialog);
                     StartCoroutine(nextDialog());
                 }
             }
+            else
+            {
+                DialogManager.Instance.invokeEvent(currentDialog.reply[field].action);
+
+                if (!currentDialog.reply[field].breakDialog)
+                {
+                    if (currentDialog.reply[field].nextDialog != null)
+                    {
+                        currentDialog = DialogManager.Instance.findDialog(currentDialog.reply[field].nextDialog);
+
+                        StartCoroutine(nextDialog());
+                    }
+                    else
+                    {
+                        UIManager.Instance.toPrevScreen();
+                    }
+
+                    dialogOptions.gameObject.SetActive(false);
+                }
+            }
         }
+    }
+
+    private bool hasNoReply(List<Reply> reply)
+    {
+        return reply == null || reply.Count == 0;
     }
 
     public void startDialog(string dialogId)
@@ -100,7 +146,7 @@ public class DialogScreen : MainScreen, INavigation, IInteraction
         foreach (char letter in text.ToCharArray())
         {
             this.text.text += letter;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.02f);
         }
         canInteract = true;
         if (currentDialog.reply.Count > 0 && currentDialog.reply != null)
@@ -113,13 +159,18 @@ public class DialogScreen : MainScreen, INavigation, IInteraction
     {
         dialogOptions.gameObject.SetActive(true);
         List<Reply> reply = currentDialog.reply;
-        if (reply.Count > 0 && reply.Count <= 3)
+
+        totalFields = reply.Count;
+        field = 0;
+        prevField = 0;
+
+        if (totalFields > 0 && totalFields <= 3)
         {
-            int optionsCount = reply.Count;
+
             int index = 0;
             dialogOptionList.ForEach(d =>
             {
-                if(index < optionsCount)
+                if(index < totalFields)
                 {
                     if (!d.gameObject.activeSelf)
                     {
@@ -133,8 +184,16 @@ public class DialogScreen : MainScreen, INavigation, IInteraction
                 {
                     d.gameObject.SetActive(false);
                 }
+                if (d.TryGetComponent(out AnimationSystem animationSystem) && d.gameObject.activeSelf)
+                {
+                    animationSystem.changeAnimation("active");
+                }
                 index++;
             });
+            if(dialogOptionList[0].TryGetComponent(out AnimationSystem animationSystem))
+            {
+                animationSystem.changeAnimation("selected");
+            }
         }
     }
 }
