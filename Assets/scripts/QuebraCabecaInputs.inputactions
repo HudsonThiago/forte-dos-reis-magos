@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "QuebraCabecaInputs",
+    "maps": [
+        {
+            "name": "GameControlsQuebraCabeca",
+            "id": "0ad31cf5-347f-4318-a187-a58da2e639dd",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "86165865-9b2c-471b-8a02-fbdb5930b4e8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "58042730-abb7-42b5-a5fa-51ee8112d010",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
