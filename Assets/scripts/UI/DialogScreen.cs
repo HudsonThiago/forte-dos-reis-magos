@@ -87,6 +87,7 @@ public class DialogScreen : MainScreen, INavigation, IInteraction
     {
         if (canInteract)
         {
+            canInteract = false;
             DialogManager.Instance.invokeEvent(currentDialog.action);
 
             if (hasNoReply(currentDialog.reply))
