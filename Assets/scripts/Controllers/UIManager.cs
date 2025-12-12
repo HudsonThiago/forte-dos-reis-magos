@@ -102,6 +102,25 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void finishExcavation()
+    {
+        StartCoroutine(finishExcavationCoroutine());
+    }
+
+    IEnumerator finishExcavationCoroutine()
+    {
+        if (transitionScreen.TryGetComponent(out AnimationSystem animationSystem))
+        {
+            yield return new WaitForSeconds(animationSystem.changeAnimation("transitionStart"));
+            toScreen(ScreenName.MAIN);
+            currentScreen.prevScreen = getScreen(ScreenName.DIG);
+            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(animationSystem.changeAnimation("transitionEnd"));
+            CursorManager.Instance.gameCursor();
+
+        }
+    }
+
 }
 
 
