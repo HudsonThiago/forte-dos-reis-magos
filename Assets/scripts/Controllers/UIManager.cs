@@ -111,6 +111,7 @@ public class UIManager : MonoBehaviour
     {
         if (transitionScreen.TryGetComponent(out AnimationSystem animationSystem))
         {
+            yield return new WaitForSeconds(2);
             yield return new WaitForSeconds(animationSystem.changeAnimation("transitionStart"));
             toScreen(ScreenName.MAIN);
             currentScreen.prevScreen = getScreen(ScreenName.DIG);
