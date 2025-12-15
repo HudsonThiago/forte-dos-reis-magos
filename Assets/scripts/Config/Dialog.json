@@ -1,104 +1,109 @@
 {"dialogueList": [
 	{
-		"id": "test001",
-		"title": "Fulano",
-		"text": "Olá, tudo bem?",
+		"id": "text001",
+		"title": "Guia do Forte",
+		"text": "Olá, tudo bem? Bem vindo ao Forte dos Reis Magos! Vou ser seu guia durante essa exploração.",
+		"nextDialog": "text002"
+	},
+	{
+		"id": "text002",
+		"title": "Guia do Forte",
+		"text": "Sempre que me ver parado por aí poderá interagir e aprender alguns fatos históricos sobre este lugar! Aproveite a excursão",
 		"reply": [
 			{
-				"text": "Sim, estou indo...",
-				"nextDialog": "test002"
+				"text": "Obrigado!! Vou explorar"
 			},
 			{
-				"text": "ehh... a UFRN não me deixa ser feliz",
-				"nextDialog": "test003"
-			},
-			{
-				"text": "Apenas um teste",
-				"nextDialog": "test008"
+				"text": "Poderia falar um pouco sobre este lugar?",
+				"nextDialog": "text003"
 			}
 		]
 	},
 	{
-		"id": "test002",
-		"title": "Fulano",
-		"text": "que bom! Espero que esteja bem mesmo",
-		"nextDialog": "test004"
+		"id": "text003",
+		"title": "Guia do Forte",
+		"text": "Claro, fico feliz em falar um pouco sobre com você",
+		"nextDialog": "text004"
 	},
 	{
-		"id": "test003",
-		"title": "Fulano",
-		"text": "O semestre está quase acabando! Força que você consegue!!",
-		"nextDialog": "test004"
+		"id": "text004",
+		"title": "Guia do Forte",
+		"text": "O Forte dos Reis Magos foi construído pelos portugueses em 1598, sendo inaugurado em 6 de janeiro de 1599, dia de Reis",
+		"nextDialog": "text005"
 	},
 	{
-		"id": "test004",
-		"title": "Fulano",
-		"text": "Deu minha hora! Já estou indo."
+		"id": "text005",
+		"title": "Guia do Forte",
+		"text": "Ele foi construído principalmente para fins de defesa. Na época, a região sofria ameaças de invasões estrangeiras, especialmente de franceses, que disputavam o controle do litoral brasileiro.",
+		"nextDialog": "text006"
 	},
 	{
-		"id": "test005",
-		"title": "Mesa com artefatos históricos",
-		"text": "Durante as escavações no Forte foram encontrados materiais arqueológicos, como: potes de cerâmica, utensílios de louça, porcelana, vidro, balas de canhão, moedas, adornos, cachimbos, entre outros."
+		"id": "text006",
+		"title": "Guia do Forte",
+		"text": "O forte servia para proteger a foz do rio Potengi, um ponto estratégico para o acesso ao território e para o comércio marítimo.",
+		"nextDialog": "text007"
 	},
 	{
-		"id": "test006",
-		"title": "Mesa com artefatos históricos",
-		"text": "Testando diálogo, Aperte [E]",
-		"nextDialog": "test007"
+		"id": "text007",
+		"title": "Guia do Forte",
+		"text": "Além da função militar, o forte ajudou a garantir a posse portuguesa da região, contribuindo diretamente para a fundação da cidade de Natal. Sua arquitetura em formato de estrela era moderna para a época e facilitava a defesa contra ataques.",
+		"nextDialog": "text008"
 	},
 	{
-		"id": "test007",
-		"title": "Mesa com artefatos históricos",
-		"text": "Deu certo! Aperte [E] de novo!."
+		"id": "text008",
+		"title": "Guia do Forte",
+		"text": "Hoje, o Forte dos Reis Magos é um dos principais patrimônios históricos do Rio Grande do Norte e um símbolo do início da ocupação portuguesa na região."
 	},
 	{
-		"id": "test008",
-		"title": "Fulano",
-		"text": "Isso é apenas um teste, a primeira opção fecha o diálogo. A segunda opção vai para outro diálogo",
+		"id": "text009",
+		"title": "Guia do Forte",
+		"text": "Esta sala contém alguns artefatos históricos que foram encontrados durante as explorações e escavações arqueológicas",
+		"nextDialog": "text010"
+	},
+	{
+		"id": "text010",
+		"title": "Guia do Forte",
+		"text": "Durante as escavações no Forte foram encontrados materiais arqueológicos, como: potes de cerâmica, utensílios de louça, porcelana, vidro, balas de canhão, moedas, adornos, cachimbos, entre outros.",
+		"nextDialog": "text011"
+	},
+	{
+		"id": "text011",
+		"title": "Guia do Forte",
+		"text": "Gostaria de ter essa experiência na prática?",
 		"reply": [
 			{
-				"text": "Teste 1"
+				"text": "Não, obrigado!"
 			},
 			{
-				"text": "Teste 2",
-				"nextDialog": "test003"
+				"text": "Ir para o jogo de escavação",
+				"action": "minigame2"
 			}
 		]
 	},
 	{
-		"id": "test009",
-		"title": "Teste",
-		"text": "Testando a primeira função. aperte [E] para chamar a função",
-		"nextDialog": "test010",
-		"action": "test1"
+		"id": "text012",
+		"title": "Guia do Forte",
+		"text": "As três estátuas nesta capela representam os Três Reis Magos do cristianismo: Baltazar, Belchior e Gaspar",
+		"nextDialog": "text013"
 	},
 	{
-		"id": "test010",
-		"title": "Teste",
-		"text": "Outro teste de função",
+		"id": "text013",
+		"title": "Guia do Forte",
+		"text": "Segundo a tradição bíblica, eles foram os sábios do Oriente que seguiram a estrela até Belém para visitar o menino Jesus, oferecendo ouro, incenso e mirra."
+	},
+	{
+		"id": "text014",
+		"title": "Guia do Forte",
+		"text": "Nossa excursão acabou de começar, gostaria de ver algumas fotos importantes?",
 		"reply": [
 			{
-				"text": "Ir para o jogo da escavação",
-				"action": "test2",
+				"text": "Não, obrigado!"
+			},
+			{
+				"text": "Ir para o jogo do quebra-cabeça",
+				"action": "minigame1",
 				"breakDialog": true
-			},
-			{
-				"text": "Teste 3",
-				"nextDialog": "test011",
-				"action": "test3"
 			}
 		]
-	},
-	{
-		"id": "test011",
-		"title": "Teste",
-		"text": "último teste!!",
-		"reply": [
-			{
-				"text": "Função 4",
-				"action": "test4"
-			}
-		],
-		"action": "test5"
 	}
 ]}
