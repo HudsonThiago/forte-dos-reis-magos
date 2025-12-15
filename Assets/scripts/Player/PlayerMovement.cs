@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour, Movement
         }
         else
         {
-            // Se não estiver movendo, desacelera rapidamente
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
     }
@@ -49,7 +48,6 @@ public class PlayerMovement : MonoBehaviour, Movement
     {
         Vector3 flatVel = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
-        // limit velocity if needed
         if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;

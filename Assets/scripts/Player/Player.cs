@@ -1,9 +1,4 @@
-using Assets.scripts;
-using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
