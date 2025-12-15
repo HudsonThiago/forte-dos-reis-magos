@@ -1696,7 +1696,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733957311}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1957,9 +1957,9 @@ RectTransform:
   - {fileID: 1763866213}
   m_Father: {fileID: 733957312}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -292}
   m_SizeDelta: {x: 115.06, y: 36.5}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &872665428
@@ -2756,8 +2756,23 @@ MonoBehaviour:
     Curiosamente, essas melhorias nunca foram usadas em batalha. Em 1654, com a rendi\xE7\xE3o
     holandesa em Recife, a guarni\xE7\xE3o abandonou o forte sem lutar. Os portugueses
     retomaram a fortaleza e continuaram suas obras, mas em um ritmo muito mais lento."
-  - Canhao
-  - Capela
+  - "O Forte dos Reis Magos n\xE3o era apenas um marco de funda\xE7\xE3o, mas uma
+    poderosa m\xE1quina de guerra projetada para defender a costa brasileira. Os
+    documentos da \xE9poca detalham um arsenal robusto, com dezenas de pe\xE7as de
+    artilharia, incluindo canh\xF5es de bronze e de ferro com diversos calibres.
+    Esses canh\xF5es eram estrategicamente posicionados ao longo das muralhas e nas
+    casamatas para garantir que a barra do Rio Potengi estivesse totalmente protegida.
+    A maior parte do fogo era direcionada \xE0 barbeta (por cima do parapeito), permitindo
+    um campo de vis\xE3o desimpedido para atingir as embarca\xE7\xF5es inimigas. 
+    Atualmente, os visitantes ainda podem testemunhar a presen\xE7a imponente desses
+    canh\xF5es, que permanecem dispostos ao longo das muralhas."
+  - "Localizada no centro do Forte dos Reis Magos, a capela \xE9 um dos espa\xE7os
+    mais not\xE1veis dessa fortifica\xE7\xE3o hist\xF3rica. Mais do que um local
+    de devo\xE7\xE3o, ela revela a engenhosidade estrat\xE9gica da constru\xE7\xE3o
+    colonial.  A principal curiosidade da capela \xE9 o seu teto, que esconde um
+    engenhoso compartimento secreto. Este espa\xE7o era utilizado para armazenar
+    secretamente armas e muni\xE7\xE3o, um detalhe crucial que garantia a defesa
+    da fortaleza e a capacidade de resist\xEAncia em momentos de crise."
   animationDuration: 1.5
   imagemAtualIndex: 0
   pausePanel: {fileID: 1890453886485990677}
@@ -3408,10 +3423,10 @@ RectTransform:
   - {fileID: 975987433}
   m_Father: {fileID: 606079210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 389.33118, y: 1.5374756}
-  m_SizeDelta: {x: -778.6605, y: 48.6469}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -161.66882, y: 1.5374756}
+  m_SizeDelta: {x: 323.33948, y: 536.6469}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1679947123
 MonoBehaviour:
