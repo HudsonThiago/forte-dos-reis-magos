@@ -129,8 +129,115 @@
 		{
 			"id": "text016",
 			"title": "Guia do Forte",
-			"text": "São velhos mesmo haha, mas representam um marco histórico da cidade de Natal!",
-			"breakDialog": true
+			"text": "São velhos mesmo haha, mas representam um marco histórico da cidade de Natal!"
+		},
+		{
+			"id": "text017",
+			"title": "Guia do Forte",
+			"text": "A então capitania do Rio Grande foi concedida, pelo rei de Portugal, Dom João III, aos capitães donatários João de Barros e Aires da Cunha.",
+			"reply": [
+				{
+					"text": "Interessante!!"
+				},
+				{
+					"text": "Como foi esse processo?",
+					"nextDialog": "text018"
+				}
+			]
+		},
+		{
+			"id": "text018",
+			"title": "Guia do Forte",
+			"text": "A conquista dos territórios, que hoje se encontra o Estado do Rio Grande do Norte, não foi nada fácil pela FORTE RESISTÊNCIA INDÍGENA. Os potiguaras eram os povos que habitavam a costa do litoral",
+			"nextDialog": "text019"
+		},
+		{
+			"id": "text019",
+			"title": "Guia do Forte",
+			"text": "Houve duas tentativas de colonização. A primeira expedição ocorreu em 1535 e foi um fracasso, resultando até na morte do donatário Aires da Cunha.",
+			"nextDialog": "text020"
+		},
+		{
+			"id": "text020",
+			"title": "Guia do Forte",
+			"text": "A segunda expedição ocorreu em 1555 comandada pelos filhos de João de Barros, Jerônimo e João de Barros filho e, novamente, não conseguiram tomar posse da capitania.",
+			"reply": [
+				{
+					"text": "Nossa!!"
+				},
+				{
+					"text": "Se não houve colonização o que rolou?",
+					"nextDialog": "text021"
+				}
+			]
+		},
+		{
+			"id": "text021",
+			"title": "Guia do Forte",
+			"text": "Mesmo sem a colonização, João de Barros ainda conseguia lucrar com a capitania do Rio Grande. Ele vendia licença para que outras pessoas pudessem entrar no território e explorar pau-brasil e búzios (moeda de troca africana).",
+			"nextDialog": "text022"
+		},
+		{
+			"id": "text022",
+			"title": "Guia do Forte",
+			"text": "Posteriormente, a capitania do Rio Grande deixou de ser uma capitania hereditária e passou a ser uma capitania Régia.",
+			"nextDialog": "text023"
+		},
+		{
+			"id": "text023",
+			"title": "Guia do Forte",
+			"text": "E a família barros recebeu uma indenização, uma recompensa, por ter perdido a capitania.",
+			"nextDialog": "text024"
+		},
+		{
+			"id": "text024",
+			"title": "Guia do Forte",
+			"text": "Com a capitania nas mãos da monarquia, na época nas mãos de Felipe II, houve uma missão para tentar ocupar o território do Rio Grande. Com isso, em 1598 houve a iniciativa da construção de uma fortaleza para defesa militar.",
+			"reply": [
+				{
+					"text": "Essa fortaleza é o Forte dos Reis Magos?",
+					"nextDialog": "text025"
+				}
+			]
+		},
+		{
+			"id": "text025",
+			"title": "Guia do Forte",
+			"text": "Exatamente!! Após a construção do forte, houve um acordo de paz dos povos Potiguaras e dos povos Tabajaras a fim de terminar os conflitos. Assim foi possível fundar a cidade de Natal em 1599.",
+			"reply": [
+				{
+					"text": "Muito massa!"
+				}
+			]
+		},
+		{
+			"id": "text026",
+			"title": "Guia do Forte",
+			"text": "No período de 1630 a 1654 houve a invasão holandesa no litoral do Rio Grande do Norte.",
+			"nextDialog": "text027"
+		},
+		{
+			"id": "text027",
+			"title": "Guia do Forte",
+			"text": "Em 1633, os holandeses conseguiram tomar o Forte dos Reis Magos, em Natal, e, foi rebatizado como Forte Ceulen, em homenagem a um comandante holandês.",
+			"nextDialog": "text028"
+		},
+		{
+			"id": "text028",
+			"title": "Guia do Forte",
+			"text": "A população local nunca aceitou plenamente o domínio holandês. Portanto, Portugueses, luso-brasileiros e indígenas aliados organizaram guerrilhas e ataques.",
+			"nextDialog": "text029"
+		},
+		{
+			"id": "text029",
+			"title": "Guia do Forte",
+			"text": "A partir de 1645, iniciou-se a Insurreição Pernambucana. O RN participou indiretamente do conflito, servindo como área de apoio e disputa.",
+			"nextDialog": "text030"
+		},
+		{
+			"id": "text030",
+			"title": "Guia do Forte",
+			"text": "Em 1654, os holandeses foram expulsos do Nordeste brasileiro. O Forte dos Reis Magos voltou ao controle português e o RN retornou à administração colonial portuguesa."
 		}
 	]
 }
