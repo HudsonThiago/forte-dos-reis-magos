@@ -24,6 +24,8 @@ public class WaterReflection : MonoBehaviour
 
     public void Awake()
     {
+        mainCamTransform = transform;
+        reflectionCamTransform = transform;
         mainCamera = Camera.main;
 
         reflectionCamera = GetComponent<Camera>();

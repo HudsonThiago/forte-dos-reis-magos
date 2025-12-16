@@ -10,13 +10,16 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        screenList.ForEach(screen =>
+        if(screenList.Count > 0)
         {
-            if (screen.activeSelf == true)
+            screenList.ForEach(screen =>
             {
-                currentScreen = screen;
-            }
-        });
+                if (screen.activeSelf == true)
+                {
+                    currentScreen = screen;
+                }
+            });
+        }
 
         if (instance != null && instance != this)
         {
