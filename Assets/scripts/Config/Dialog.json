@@ -107,7 +107,6 @@
 				}
 			]
 		},
-
 		{
 			"id": "text015",
 			"title": "Guia do Forte",
@@ -122,16 +121,15 @@
 				},
 				{
 					"text": "Ir para o jogo de Tower Defense",
-					"action": "minigame1",
+					"action": "minigame3",
 					"breakDialog": true
 				}
 			]
 		},
-
 		{
 			"id": "text016",
 			"title": "Guia do Forte",
-			"text": "São velhos mesmo haha, mas é representam um marco histórico da cidade de Natal!",
+			"text": "São velhos mesmo haha, mas representam um marco histórico da cidade de Natal!",
 			"breakDialog": true
 		}
 	]

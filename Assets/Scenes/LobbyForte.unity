@@ -52263,52 +52263,32 @@ MonoBehaviour:
             m_StringArgument: DIG
             m_BoolArgument: 0
           m_CallState: 2
-  - id: test3
+  - id: minigame3
     action:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2021623281}
-          m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
-          m_MethodName: testEvent
-          m_Mode: 5
+        - m_Target: {fileID: 1343244024}
+          m_TargetAssemblyTypeName: CursorManager, Assembly-CSharp
+          m_MethodName: mouseCursor
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: testando evento 3
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - id: test4
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2021623281}
-          m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
-          m_MethodName: testEvent
-          m_Mode: 5
+        - m_Target: {fileID: 1576114199}
+          m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+          m_MethodName: loadScene
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 3
             m_FloatArgument: 0
-            m_StringArgument: testando evento 4
-            m_BoolArgument: 0
-          m_CallState: 2
-  - id: test5
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2021623281}
-          m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
-          m_MethodName: testEvent
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: testando evento 5
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &2021623282
