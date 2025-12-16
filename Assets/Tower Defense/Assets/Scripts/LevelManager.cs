@@ -96,8 +96,6 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // REMOVIDO: Input.GetKeyDown (KeyCode.R) foi movido para OnRestartPerformed
-
         if (IsOver)
         {
             return;
@@ -113,6 +111,12 @@ public class LevelManager : MonoBehaviour
 
         foreach (Tower tower in _spawnedTowers)
         {
+            // 🚨 ADIÇÃO ESSENCIAL: Previne o MissingReferenceException
+            if (tower == null)
+            {
+                continue;
+            }
+
             tower.CheckNearestEnemy(_spawnedEnemies);
             tower.SeekTarget();
             tower.ShootTarget();
@@ -145,7 +149,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    // ... (Resto do código sem alteração) ...
     private void InstantiateAllTowerUI()
     {
         foreach (Tower tower in _towerPrefabs)
@@ -160,6 +163,16 @@ public class LevelManager : MonoBehaviour
     public void RegisterSpawnedTower(Tower tower)
     {
         _spawnedTowers.Add(tower);
+    }
+
+    // 💡 NOVO: Método para remover uma torre da lista de rastreamento.
+    // Isso é chamado pelo TowerPlacement antes de destruir a torre antiga.
+    public void RemoveSpawnedTower(Tower tower)
+    {
+        if (tower != null && _spawnedTowers.Contains(tower))
+        {
+            _spawnedTowers.Remove(tower);
+        }
     }
 
     private void SpawnEnemy()
