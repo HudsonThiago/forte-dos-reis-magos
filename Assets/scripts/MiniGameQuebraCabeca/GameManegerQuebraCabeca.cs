@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement; // Adicionado para carregar cenas
 public class GameManegerQuebraCabeca : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
-    // O piecePrefab deve ser um prefab que você arrastou no Inspector
+    // O piecePrefab deve ser um prefab que vocï¿½ arrastou no Inspector
     [SerializeField] private Transform piecePrefab;
 
     // Campo do Novo Sistema de Input (Configure no Inspector)
@@ -20,57 +20,57 @@ public class GameManegerQuebraCabeca : MonoBehaviour
     [SerializeField] private LayerMask pieceLayer;
 
     // Campo para definir dificuldade (Configure no Inspector)
-    // O valor é definido pelo Painel de Seleção antes do jogo começar
+    // O valor ï¿½ definido pelo Painel de Seleï¿½ï¿½o antes do jogo comeï¿½ar
     [SerializeField] private int sizeGame = 3;
 
-    // --- NOVOS CAMPOS PARA SELEÇÃO ---
-    [Header("UI de Seleção de Jogo")]
+    // --- NOVOS CAMPOS PARA SELEï¿½ï¿½O ---
+    [Header("UI de Seleï¿½ï¿½o de Jogo")]
     [Tooltip("Arraste o painel de escolha de imagem/dificuldade.")]
     [SerializeField] private GameObject panelEscolhaImagem;
 
-    [Tooltip("Lista de materiais para as peças. O índice corresponde ao índice de conclusão.")]
+    [Tooltip("Lista de materiais para as peï¿½as. O ï¿½ndice corresponde ao ï¿½ndice de conclusï¿½o.")]
     [SerializeField] private List<Material> materiaisQuebraCabeca = new List<Material>();
 
     [Header("Toggles de Dificuldade")]
-    // Estes campos são usados apenas para definir o estado inicial (como marcado)
+    // Estes campos sï¿½o usados apenas para definir o estado inicial (como marcado)
     [SerializeField] private Toggle toggleFacil;
     [SerializeField] private Toggle toggleMedio;
     [SerializeField] private Toggle toggleDificil;
     // ---
 
-    // NOVOS CAMPOS PARA CONCLUSÃO DO QUEBRA-CABEÇA
+    // NOVOS CAMPOS PARA CONCLUSï¿½O DO QUEBRA-CABEï¿½A
     // ---
-    [Header("UI de Conclusão")]
+    [Header("UI de Conclusï¿½o")]
     [Tooltip("Arraste o painel completo (panelQuebraCabecaCompleto) que deve ter um Canvas Group.")]
     [SerializeField] private GameObject panelQuebraCabecaCompleto;
 
-    [Tooltip("Arraste o componente Text (Legacy) para atribuição do texto.")]
+    [Tooltip("Arraste o componente Text (Legacy) para atribuiï¿½ï¿½o do texto.")]
     [SerializeField] private Text textQCC; // Componente Text (Legacy)
 
-    [Tooltip("Lista de textos. O índice do texto é definido por 'Imagem Atual Index'.")]
+    [Tooltip("Lista de textos. O ï¿½ndice do texto ï¿½ definido por 'Imagem Atual Index'.")]
     [SerializeField] private List<string> textosDeConclusao = new List<string>();
 
-    [Tooltip("Duração do fade-in do painel de conclusão.")]
+    [Tooltip("Duraï¿½ï¿½o do fade-in do painel de conclusï¿½o.")]
     [SerializeField] private float animationDuration = 1.0f;
 
-    // ÍNDICE DA IMAGEM ATUAL (IMPORTANTE: Mapeia Material e Texto de Conclusão)
-    [Tooltip("Índice da imagem/texto atual (0, 1, 2, etc.)")]
+    // ï¿½NDICE DA IMAGEM ATUAL (IMPORTANTE: Mapeia Material e Texto de Conclusï¿½o)
+    [Tooltip("ï¿½ndice da imagem/texto atual (0, 1, 2, etc.)")]
     [SerializeField] private int imagemAtualIndex = 0;
     // ---
 
     // --- NOVOS CAMPOS PARA O MENU DE PAUSA ---
     [Header("UI de Pausa")]
-    [Tooltip("Arraste o painel de pausa (pausePanel) que contém os botões.")]
+    [Tooltip("Arraste o painel de pausa (pausePanel) que contï¿½m os botï¿½es.")]
     [SerializeField] private GameObject pausePanel;
 
-    [Tooltip("Arraste o botão de pausa (ButtonPause) para que ele possa ser desativado/reativado.")]
+    [Tooltip("Arraste o botï¿½o de pausa (ButtonPause) para que ele possa ser desativado/reativado.")]
     [SerializeField] private Button buttonPause; // Componente Button
 
-    [Tooltip("Arraste o botão de embaralhar para que ele possa ser desativado/reativado.")]
+    [Tooltip("Arraste o botï¿½o de embaralhar para que ele possa ser desativado/reativado.")]
     [SerializeField] private Button buttonEmbralhar; // Componente Button
 
     private bool isPaused = false;
-    private bool gameStarted = false; // Flag para controlar se o jogo começou
+    private bool gameStarted = false; // Flag para controlar se o jogo comeï¿½ou
     // ---
 
     private List<Transform> pieces;
@@ -78,14 +78,14 @@ public class GameManegerQuebraCabeca : MonoBehaviour
     private int size;
     private bool shuffling = false;
 
-    // Métodos para ativar e desativar a Action
+    // Mï¿½todos para ativar e desativar a Action
     private void OnEnable()
     {
         clickAction.performed += HandleClick;
         clickAction.Enable();
 
-        // Remove listeners dinâmicos, a conexão agora é feita no Inspector com SetDifficulty(int)
-        // Se a conexão for feita via código no Start(), mantenha os AddListener
+        // Remove listeners dinï¿½micos, a conexï¿½o agora ï¿½ feita no Inspector com SetDifficulty(int)
+        // Se a conexï¿½o for feita via cï¿½digo no Start(), mantenha os AddListener
     }
 
     private void OnDisable()
@@ -94,10 +94,10 @@ public class GameManegerQuebraCabeca : MonoBehaviour
         clickAction.Disable();
     }
 
-    // A nova função que será chamada quando o clique for detectado
+    // A nova funï¿½ï¿½o que serï¿½ chamada quando o clique for detectado
     private void HandleClick(InputAction.CallbackContext context)
     {
-        // Impede o clique se o jogo estiver pausado, embaralhando ou se não tiver começado
+        // Impede o clique se o jogo estiver pausado, embaralhando ou se nï¿½o tiver comeï¿½ado
         if (!context.performed || isPaused || shuffling || !gameStarted) return;
 
         Vector3 worldPoint3D = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -123,7 +123,7 @@ public class GameManegerQuebraCabeca : MonoBehaviour
 
     private void CreateGamePieces(float gapThickness)
     {
-        // Limpa peças anteriores se houver (para Novo Jogo/Reset)
+        // Limpa peï¿½as anteriores se houver (para Novo Jogo/Reset)
         if (pieces != null && pieces.Count > 0)
         {
             foreach (Transform piece in pieces)
@@ -142,7 +142,7 @@ public class GameManegerQuebraCabeca : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Material não encontrado para o índice {imagemAtualIndex}. Verifique a lista 'Materiais Quebra Cabeca'.");
+            Debug.LogWarning($"Material nï¿½o encontrado para o ï¿½ndice {imagemAtualIndex}. Verifique a lista 'Materiais Quebra Cabeca'.");
         }
         // ---
 
@@ -181,16 +181,16 @@ public class GameManegerQuebraCabeca : MonoBehaviour
         }
     }
 
-    // Start é chamado antes do primeiro frame update
+    // Start ï¿½ chamado antes do primeiro frame update
     void Start()
     {
         pieces = new List<Transform>();
 
-        // 1. Garante que os painéis de jogo estejam desativados
+        // 1. Garante que os painï¿½is de jogo estejam desativados
         if (panelQuebraCabecaCompleto != null) panelQuebraCabecaCompleto.SetActive(false);
         if (pausePanel != null) pausePanel.SetActive(false);
 
-        // Desativa os botões de jogo no início
+        // Desativa os botï¿½es de jogo no inï¿½cio
         SetGameButtonsInteractive(false);
 
         // 2. ATIVA O PAINEL DE ESCOLHA DE IMAGEM/DIFICULDADE
@@ -199,17 +199,17 @@ public class GameManegerQuebraCabeca : MonoBehaviour
             panelEscolhaImagem.SetActive(true);
         }
 
-        // 3. Define a dificuldade inicial (padrão 3x3)
-        // É crucial que sizeGame tenha um valor antes de StartGame()
+        // 3. Define a dificuldade inicial (padrï¿½o 3x3)
+        // ï¿½ crucial que sizeGame tenha um valor antes de StartGame()
         sizeGame = 3;
-        if (toggleFacil != null) toggleFacil.isOn = true; // Marca o fácil como padrão
+        if (toggleFacil != null) toggleFacil.isOn = true; // Marca o fï¿½cil como padrï¿½o
 
-        // O jogo não começa aqui. Ele só começará quando o usuário clicar em "Iniciar" no painel.
+        // O jogo nï¿½o comeï¿½a aqui. Ele sï¿½ comeï¿½arï¿½ quando o usuï¿½rio clicar em "Iniciar" no painel.
     }
 
-    // --- MÉTODOS DE CONTROLE DO JOGO ---
+    // --- Mï¿½TODOS DE CONTROLE DO JOGO ---
 
-    // Método para controlar a interação dos botões de jogo (Pause e Embaralhar)
+    // Mï¿½todo para controlar a interaï¿½ï¿½o dos botï¿½es de jogo (Pause e Embaralhar)
     private void SetGameButtonsInteractive(bool interactive)
     {
         if (buttonPause != null)
@@ -223,7 +223,7 @@ public class GameManegerQuebraCabeca : MonoBehaviour
     }
 
     /// <summary>
-    /// Chamado para iniciar o jogo após a seleção de imagem e dificuldade.
+    /// Chamado para iniciar o jogo apï¿½s a seleï¿½ï¿½o de imagem e dificuldade.
     /// </summary>
     public void StartGame()
     {
@@ -234,12 +234,12 @@ public class GameManegerQuebraCabeca : MonoBehaviour
             panelEscolhaImagem.SetActive(false);
         }
 
-        size = sizeGame; // Define o tamanho do jogo com base na seleção
+        size = sizeGame; // Define o tamanho do jogo com base na seleï¿½ï¿½o
 
-        // 1. Cria as peças com o material e tamanho escolhidos
+        // 1. Cria as peï¿½as com o material e tamanho escolhidos
         CreateGamePieces(0.01f);
 
-        // 2. Ativa os botões de jogo
+        // 2. Ativa os botï¿½es de jogo
         SetGameButtonsInteractive(true);
 
         // 3. Inicia o embaralhamento
@@ -248,24 +248,24 @@ public class GameManegerQuebraCabeca : MonoBehaviour
         gameStarted = true; // Marca que o jogo pode ser jogado
     }
 
-    // Update é mantido para checagem de conclusão
+    // Update ï¿½ mantido para checagem de conclusï¿½o
     void Update()
     {
-        // Só checa a conclusão se o jogo tiver começado, não estiver embaralhando e não estiver pausado.
+        // Sï¿½ checa a conclusï¿½o se o jogo tiver comeï¿½ado, nï¿½o estiver embaralhando e nï¿½o estiver pausado.
         if (gameStarted && !shuffling && !isPaused && CheckCompletion())
         {
-            Debug.Log("quebra cabeça completo");
+            Debug.Log("quebra cabeï¿½a completo");
             HandleCompletion();
             enabled = false;
         }
     }
 
-    // --- LÓGICA DE SELEÇÃO DE IMAGEM/DIFICULDADE ---
+    // --- Lï¿½GICA DE SELEï¿½ï¿½O DE IMAGEM/DIFICULDADE ---
 
     /// <summary>
-    /// Chamado pelos botões de escolha de imagem.
+    /// Chamado pelos botï¿½es de escolha de imagem.
     /// </summary>
-    /// <param name="index">O índice da imagem e do texto na lista (0, 1, 2...).</param>
+    /// <param name="index">O ï¿½ndice da imagem e do texto na lista (0, 1, 2...).</param>
     public void SelectImage(int index)
     {
         if (index >= 0 && index < materiaisQuebraCabeca.Count)
@@ -275,24 +275,24 @@ public class GameManegerQuebraCabeca : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"Índice de imagem inválido: {index}. Verifique 'Materiais Quebra Cabeca' e 'Textos De Conclusao'.");
+            Debug.LogError($"ï¿½ndice de imagem invï¿½lido: {index}. Verifique 'Materiais Quebra Cabeca' e 'Textos De Conclusao'.");
         }
     }
 
     /// <summary>
-    /// Chamado pelos Toggles de dificuldade (On Value Changed -> Função estática int).
+    /// Chamado pelos Toggles de dificuldade (On Value Changed -> Funï¿½ï¿½o estï¿½tica int).
     /// </summary>
     /// <param name="newSize">O novo tamanho (3, 4 ou 5).</param>
     public void SetDifficulty(int newSize)
     {
-        // Esta função será chamada duas vezes (true/false) se o evento OnValueChanged for usado.
-        // Já que o Toggle Group garante que apenas um está ativo, simplesmente definimos o tamanho.
-        // O valor 'sizeGame' será usado apenas quando StartGame() for chamado.
+        // Esta funï¿½ï¿½o serï¿½ chamada duas vezes (true/false) se o evento OnValueChanged for usado.
+        // Jï¿½ que o Toggle Group garante que apenas um estï¿½ ativo, simplesmente definimos o tamanho.
+        // O valor 'sizeGame' serï¿½ usado apenas quando StartGame() for chamado.
         sizeGame = newSize;
         Debug.Log($"Dificuldade definida: {sizeGame}x{sizeGame}");
     }
 
-    // --- LÓGICA DE PAUSA ---
+    // --- Lï¿½GICA DE PAUSA ---
 
     public void clickButtonPause()
     {
@@ -319,21 +319,21 @@ public class GameManegerQuebraCabeca : MonoBehaviour
             pausePanel.SetActive(shouldPause);
         }
 
-        // Desativa/Ativa os botões de jogo quando pausado
+        // Desativa/Ativa os botï¿½es de jogo quando pausado
         if (gameStarted)
         {
             SetGameButtonsInteractive(!shouldPause);
         }
         else if (buttonPause != null)
         {
-            // No caso do jogo ainda não ter começado (StartGame não chamado)
+            // No caso do jogo ainda nï¿½o ter comeï¿½ado (StartGame nï¿½o chamado)
             buttonPause.interactable = false;
         }
 
         Debug.Log(shouldPause ? "Jogo Pausado" : "Jogo Despausado");
     }
 
-    // --- FUNÇÕES DE NAVEGAÇÃO DO MENU ---
+    // --- FUNï¿½ï¿½ES DE NAVEGAï¿½ï¿½O DO MENU ---
 
     public void clickButtonNovoJogo()
     {
@@ -346,14 +346,14 @@ public class GameManegerQuebraCabeca : MonoBehaviour
     {
         TogglePause(false);
         Debug.Log("Voltando ao Lobby (TODO: Carregar cena do Lobby)");
-        // Exemplo: SceneManager.LoadScene("LobbySceneName");
+        SceneManager.LoadScene("LobbyForte");
     }
 
     public void clickButtonVoltarAoMenu()
     {
         TogglePause(false);
         Debug.Log("Voltando ao Menu Principal (TODO: Carregar cena do Menu)");
-        // Exemplo: SceneManager.LoadScene("MenuPrincipalSceneName");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void clickButtonSair()
@@ -363,10 +363,10 @@ public class GameManegerQuebraCabeca : MonoBehaviour
     }
 
 
-    // NOVO MÉTODO: Lida com a conclusão do quebra-cabeça
+    // NOVO Mï¿½TODO: Lida com a conclusï¿½o do quebra-cabeï¿½a
     private void HandleCompletion()
     {
-        // Reativa a peça vazia para o estado de conclusão
+        // Reativa a peï¿½a vazia para o estado de conclusï¿½o
         if (pieces.Count > emptyLocation)
         {
             pieces[emptyLocation].gameObject.SetActive(true);
@@ -379,33 +379,33 @@ public class GameManegerQuebraCabeca : MonoBehaviour
         }
         else if (textQCC != null)
         {
-            textQCC.text = "Quebra-cabeça Completo! (Texto padrão)";
+            textQCC.text = "Quebra-cabeï¿½a Completo! (Texto padrï¿½o)";
         }
 
-        // 2. Inicia a animação de Fade-In do painel
+        // 2. Inicia a animaï¿½ï¿½o de Fade-In do painel
         if (panelQuebraCabecaCompleto != null)
         {
             panelQuebraCabecaCompleto.SetActive(true);
             StartCoroutine(AnimateCompletionPanel(panelQuebraCabecaCompleto));
         }
 
-        // Desativa os botões de jogo
+        // Desativa os botï¿½es de jogo
         SetGameButtonsInteractive(false);
     }
 
-    // NOVA CORROTINA: Anima o painel de conclusão (Fade-In)
+    // NOVA CORROTINA: Anima o painel de conclusï¿½o (Fade-In)
     private IEnumerator AnimateCompletionPanel(GameObject panel)
     {
-        // Tenta obter o CanvasGroup para a animação de opacidade
+        // Tenta obter o CanvasGroup para a animaï¿½ï¿½o de opacidade
         CanvasGroup canvasGroup = panel.GetComponent<CanvasGroup>();
 
         if (canvasGroup == null)
         {
-            Debug.LogWarning("O Painel de Conclusão precisa de um componente Canvas Group para o fade-in animado.");
-            yield break; // Sai da corrotina se não houver CanvasGroup
+            Debug.LogWarning("O Painel de Conclusï¿½o precisa de um componente Canvas Group para o fade-in animado.");
+            yield break; // Sai da corrotina se nï¿½o houver CanvasGroup
         }
 
-        // Configuração inicial (invisível)
+        // Configuraï¿½ï¿½o inicial (invisï¿½vel)
         canvasGroup.alpha = 0f;
         float elapsedTime = 0f;
 
@@ -416,17 +416,17 @@ public class GameManegerQuebraCabeca : MonoBehaviour
 
             elapsedTime += Time.deltaTime;
 
-            yield return null; // Espera o próximo frame
+            yield return null; // Espera o prï¿½ximo frame
         }
 
-        // Garante que o alpha final seja 1.0 (totalmente visível)
+        // Garante que o alpha final seja 1.0 (totalmente visï¿½vel)
         canvasGroup.alpha = 1f;
     }
 
 
     public void clickButtonEmbaralhar()
     {
-        // Impede o embaralhamento se o jogo estiver pausado ou não tiver começado
+        // Impede o embaralhamento se o jogo estiver pausado ou nï¿½o tiver comeï¿½ado
         if (!shuffling && !isPaused && gameStarted)
         {
             Debug.Log("Embaralhando");
