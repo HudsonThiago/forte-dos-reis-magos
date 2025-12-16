@@ -1,109 +1,138 @@
-{"dialogueList": [
-	{
-		"id": "text001",
-		"title": "Guia do Forte",
-		"text": "Olá, tudo bem? Bem vindo ao Forte dos Reis Magos! Vou ser seu guia durante essa exploração.",
-		"nextDialog": "text002"
-	},
-	{
-		"id": "text002",
-		"title": "Guia do Forte",
-		"text": "Sempre que me ver parado por aí poderá interagir e aprender alguns fatos históricos sobre este lugar! Aproveite a excursão",
-		"reply": [
-			{
-				"text": "Obrigado!! Vou explorar"
-			},
-			{
-				"text": "Poderia falar um pouco sobre este lugar?",
-				"nextDialog": "text003"
-			}
-		]
-	},
-	{
-		"id": "text003",
-		"title": "Guia do Forte",
-		"text": "Claro, fico feliz em falar um pouco sobre com você",
-		"nextDialog": "text004"
-	},
-	{
-		"id": "text004",
-		"title": "Guia do Forte",
-		"text": "O Forte dos Reis Magos foi construído pelos portugueses em 1598, sendo inaugurado em 6 de janeiro de 1599, dia de Reis",
-		"nextDialog": "text005"
-	},
-	{
-		"id": "text005",
-		"title": "Guia do Forte",
-		"text": "Ele foi construído principalmente para fins de defesa. Na época, a região sofria ameaças de invasões estrangeiras, especialmente de franceses, que disputavam o controle do litoral brasileiro.",
-		"nextDialog": "text006"
-	},
-	{
-		"id": "text006",
-		"title": "Guia do Forte",
-		"text": "O forte servia para proteger a foz do rio Potengi, um ponto estratégico para o acesso ao território e para o comércio marítimo.",
-		"nextDialog": "text007"
-	},
-	{
-		"id": "text007",
-		"title": "Guia do Forte",
-		"text": "Além da função militar, o forte ajudou a garantir a posse portuguesa da região, contribuindo diretamente para a fundação da cidade de Natal. Sua arquitetura em formato de estrela era moderna para a época e facilitava a defesa contra ataques.",
-		"nextDialog": "text008"
-	},
-	{
-		"id": "text008",
-		"title": "Guia do Forte",
-		"text": "Hoje, o Forte dos Reis Magos é um dos principais patrimônios históricos do Rio Grande do Norte e um símbolo do início da ocupação portuguesa na região."
-	},
-	{
-		"id": "text009",
-		"title": "Guia do Forte",
-		"text": "Esta sala contém alguns artefatos históricos que foram encontrados durante as explorações e escavações arqueológicas",
-		"nextDialog": "text010"
-	},
-	{
-		"id": "text010",
-		"title": "Guia do Forte",
-		"text": "Durante as escavações no Forte foram encontrados materiais arqueológicos, como: potes de cerâmica, utensílios de louça, porcelana, vidro, balas de canhão, moedas, adornos, cachimbos, entre outros.",
-		"nextDialog": "text011"
-	},
-	{
-		"id": "text011",
-		"title": "Guia do Forte",
-		"text": "Gostaria de ter essa experiência na prática?",
-		"reply": [
-			{
-				"text": "Não, obrigado!"
-			},
-			{
-				"text": "Ir para o jogo de escavação",
-				"action": "minigame2"
-			}
-		]
-	},
-	{
-		"id": "text012",
-		"title": "Guia do Forte",
-		"text": "As três estátuas nesta capela representam os Três Reis Magos do cristianismo: Baltazar, Belchior e Gaspar",
-		"nextDialog": "text013"
-	},
-	{
-		"id": "text013",
-		"title": "Guia do Forte",
-		"text": "Segundo a tradição bíblica, eles foram os sábios do Oriente que seguiram a estrela até Belém para visitar o menino Jesus, oferecendo ouro, incenso e mirra."
-	},
-	{
-		"id": "text014",
-		"title": "Guia do Forte",
-		"text": "Nossa excursão acabou de começar, gostaria de ver algumas fotos importantes?",
-		"reply": [
-			{
-				"text": "Não, obrigado!"
-			},
-			{
-				"text": "Ir para o jogo do quebra-cabeça",
-				"action": "minigame1",
-				"breakDialog": true
-			}
-		]
-	}
-]}
+{
+	"dialogueList": [
+		{
+			"id": "text001",
+			"title": "Guia do Forte",
+			"text": "Olá, tudo bem? Bem vindo ao Forte dos Reis Magos! Vou ser seu guia durante essa exploração.",
+			"nextDialog": "text002"
+		},
+		{
+			"id": "text002",
+			"title": "Guia do Forte",
+			"text": "Sempre que me ver parado por aí poderá interagir e aprender alguns fatos históricos sobre este lugar! Aproveite a excursão",
+			"reply": [
+				{
+					"text": "Obrigado!! Vou explorar"
+				},
+				{
+					"text": "Poderia falar um pouco sobre este lugar?",
+					"nextDialog": "text003"
+				}
+			]
+		},
+		{
+			"id": "text003",
+			"title": "Guia do Forte",
+			"text": "Claro, fico feliz em falar um pouco sobre com você",
+			"nextDialog": "text004"
+		},
+		{
+			"id": "text004",
+			"title": "Guia do Forte",
+			"text": "O Forte dos Reis Magos foi construído pelos portugueses em 1598, sendo inaugurado em 6 de janeiro de 1599, dia de Reis",
+			"nextDialog": "text005"
+		},
+		{
+			"id": "text005",
+			"title": "Guia do Forte",
+			"text": "Ele foi construído principalmente para fins de defesa. Na época, a região sofria ameaças de invasões estrangeiras, especialmente de franceses, que disputavam o controle do litoral brasileiro.",
+			"nextDialog": "text006"
+		},
+		{
+			"id": "text006",
+			"title": "Guia do Forte",
+			"text": "O forte servia para proteger a foz do rio Potengi, um ponto estratégico para o acesso ao território e para o comércio marítimo.",
+			"nextDialog": "text007"
+		},
+		{
+			"id": "text007",
+			"title": "Guia do Forte",
+			"text": "Além da função militar, o forte ajudou a garantir a posse portuguesa da região, contribuindo diretamente para a fundação da cidade de Natal. Sua arquitetura em formato de estrela era moderna para a época e facilitava a defesa contra ataques.",
+			"nextDialog": "text008"
+		},
+		{
+			"id": "text008",
+			"title": "Guia do Forte",
+			"text": "Hoje, o Forte dos Reis Magos é um dos principais patrimônios históricos do Rio Grande do Norte e um símbolo do início da ocupação portuguesa na região."
+		},
+		{
+			"id": "text009",
+			"title": "Guia do Forte",
+			"text": "Esta sala contém alguns artefatos históricos que foram encontrados durante as explorações e escavações arqueológicas",
+			"nextDialog": "text010"
+		},
+		{
+			"id": "text010",
+			"title": "Guia do Forte",
+			"text": "Durante as escavações no Forte foram encontrados materiais arqueológicos, como: potes de cerâmica, utensílios de louça, porcelana, vidro, balas de canhão, moedas, adornos, cachimbos, entre outros.",
+			"nextDialog": "text011"
+		},
+		{
+			"id": "text011",
+			"title": "Guia do Forte",
+			"text": "Gostaria de ter essa experiência na prática?",
+			"reply": [
+				{
+					"text": "Não, obrigado!"
+				},
+				{
+					"text": "Ir para o jogo de escavação",
+					"action": "minigame2"
+				}
+			]
+		},
+		{
+			"id": "text012",
+			"title": "Guia do Forte",
+			"text": "As três estátuas nesta capela representam os Três Reis Magos do cristianismo: Baltazar, Belchior e Gaspar",
+			"nextDialog": "text013"
+		},
+		{
+			"id": "text013",
+			"title": "Guia do Forte",
+			"text": "Segundo a tradição bíblica, eles foram os sábios do Oriente que seguiram a estrela até Belém para visitar o menino Jesus, oferecendo ouro, incenso e mirra."
+		},
+		{
+			"id": "text014",
+			"title": "Guia do Forte",
+			"text": "Nossa excursão acabou de começar, gostaria de ver algumas fotos importantes?",
+			"reply": [
+				{
+					"text": "Não, obrigado!"
+				},
+				{
+					"text": "Ir para o jogo do quebra-cabeça",
+					"action": "minigame1",
+					"breakDialog": true
+				}
+			]
+		},
+
+		{
+			"id": "text015",
+			"title": "Guia do Forte",
+			"text": "Aqui, na parte superior você pode observar os canhões que **serviam como nossa principal defesa** contra as invasões marítimas no século XVII.",
+			"reply": [
+				{
+					"text": "Nossa que interessante!"
+				},
+				{
+					"text": "Esses canhões são bem... velhos",
+					"nextDialog": "text016"
+				},
+				{
+					"text": "Ir para o jogo de Tower Defense",
+					"action": "minigame1",
+					"breakDialog": true
+				}
+			]
+		},
+
+		{
+			"id": "text016",
+			"title": "Guia do Forte",
+			"text": "São velhos mesmo haha, mas é representam um marco histórico da cidade de Natal!",
+			"breakDialog": true
+		}
+	]
+}

@@ -3,8 +3,6 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
-  serializedVersion: 3
   tags:
   - interactable
   layers:
@@ -16,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Suimono_Water
+  - Suimono_Depth
+  - Suimono_Screen
   - 
   - 
   - 
