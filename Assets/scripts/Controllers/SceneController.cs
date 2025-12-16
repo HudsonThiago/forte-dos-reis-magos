@@ -33,6 +33,14 @@ public class SceneController : MonoBehaviour
         return screenList[index];
     }
 
+    private void StopMenuMusic()
+    {
+        MenuMusic menuMusic = FindObjectOfType<MenuMusic>();
+        if (menuMusic != null)
+        {
+            Destroy(menuMusic.gameObject);
+        }
+    }
 
     public void goToScreen(int targetScreen)
     {
@@ -43,14 +51,14 @@ public class SceneController : MonoBehaviour
 
     public void loadScene(string scene)
     {
-
+        StopMenuMusic();
         Time.timeScale = 1f;
         SceneManager.LoadScene(scene);
     }
 
     public void loadScene(int scene)
     {
-
+        StopMenuMusic();
         Time.timeScale = 1f;
         SceneManager.LoadScene(scene);
     }
